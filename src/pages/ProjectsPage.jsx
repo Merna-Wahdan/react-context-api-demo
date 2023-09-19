@@ -1,12 +1,17 @@
 import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import projectsData from "../data/projects-data.json";
+import { useContext } from "react";
+import { ThemeContext } from "../context/theme.context";
+
 
 function ProjectsPage() {
   const [projects, setProjects] = useState(projectsData);
+  const {theme} = useContext(ThemeContext)
+
 
   return (
-    <div className="ProjectsPage">
+    <div className={"ProjectPage " + theme}>
       <h1>My Projects</h1>
       <div className="projects">
         {projects.map((p) => (

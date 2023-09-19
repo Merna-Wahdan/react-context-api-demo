@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { ThemeContext } from "../context/theme.context";
+
 function ProjectCard(props) {
+
+  const result = useContext(ThemeContext)
+  console.log(result)
     return (
       <div className="ProjectCard">
         <h3>{props.project.name}</h3>
